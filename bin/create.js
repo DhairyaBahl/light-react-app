@@ -20,12 +20,14 @@ async function createProjectFiles(ora) {
 
         spawnSync('mkdir', ['public'], {
             cwd: path.join(targetDirectory, projectName),
+            shell: true,
         });
 
         fs.writeFileSync(path.join(targetDirectory, projectName, 'public', 'index.html'), indexHTML);
 
         spawnSync('mkdir', ['src'], {
             cwd: path.join(targetDirectory, projectName),
+            shell: true,
         });
 
         fs.readdirSync(path.join(workingDirectory, '../', 'src')).forEach(file => {
