@@ -64,6 +64,7 @@ async function installDependencies(projectName) {
 
     const installDeps = spawn('npm', ['install'], {
         cwd: path.join(targetDirectory, projectName),
+        shell: true,
     })
 
     installDeps.stdout.on('data', (data) => {
